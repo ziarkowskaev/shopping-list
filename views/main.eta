@@ -1,0 +1,15 @@
+<% layout("./layouts/layout.eta") %>
+<h1> Shopping lists application </h1>
+
+<h4><a id ="link" href="/list">Shopping lists</a></h4>
+
+<% if (it.lists == 0) { %>
+
+<h2 id = "stat">No shopping lists yet.</h2>
+
+<% } else { %>
+
+<p id = "stat" >Shopping lists: <%= it.lists %></p>
+<p id = "stat">Shopping list items: <%= it.items %></p>
+
+<% } %>
