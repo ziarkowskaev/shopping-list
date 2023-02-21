@@ -1,16 +1,16 @@
 
 <% layout("./layouts/layout.eta") %>
 
-<h1>Shopping list:<b><%= it.list.name %></b></h1>
-<a  id = "link" href="/list">All Shopping Lists</a>
+<h1><b><%= it.list.name %></b></h1>
+<a  id = "link" href="/lists">Shopping lists</a>
 
 <h3 class="one">Add Item</h3>
 
 
-<form class="one" method="POST" action="/list/<%= it.list.id %>/items">
+<form class="one" method="POST" action="/lists/<%= it.list.id %>/items">
   Item: 
   <br><input type="text" name="name" /></br> 
-  <br><input type="submit" value="Add" /></br>
+  <br><input data-testid='add' type="submit" value="Add" /></br>
 </form>
 
 <h3 class="two">Items:</h3>
@@ -18,9 +18,9 @@
 <% it.uncollected.forEach((item) => { %>
 
 <li class="two" id="list">
-<form method="POST" action="/list/<%= it.list.id %>/items/<%= item.id %>/collect">
+<form method="POST" action="/lists/<%= it.list.id %>/items/<%= item.id %>/collect">
  <%= item.name %> 
-<input type="submit" value="Collect!" />
+<input  type="submit" value="Mark collected!" />
 </form>
 </li>
 <% }); %>

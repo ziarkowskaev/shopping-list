@@ -1,9 +1,5 @@
 import { sql } from "../database/database.js";
 
-
-/*
-POST && /list/{id}/items
-*/
 const createItem = async (listId, name) => {
   await sql`INSERT INTO
     shopping_list_items (shopping_list_id, name)
@@ -13,14 +9,14 @@ const createItem = async (listId, name) => {
 
 const findUncollected= async (listId) => {
   const rows = await sql`SELECT * FROM shopping_list_items
-    WHERE shopping_list_id = ${ listId } AND collected = FALSE`;
+    WHERE shopping_list_id = ${ listId } AND collected = FALSE ORDER BY name`;
 
   return rows;
 };
 
 const findCollected = async (listId) => {
     const rows = await sql`SELECT * FROM shopping_list_items
-    WHERE shopping_list_id = ${ listId } AND collected = TRUE ORDER BY id DESC`;
+    WHERE shopping_list_id = ${ listId } AND collected = TRUE ORDER BY name`;
 
   return rows;
 

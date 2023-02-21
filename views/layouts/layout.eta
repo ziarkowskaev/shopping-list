@@ -1,6 +1,5 @@
 <html lang="en">
 <head>
-<title>Shopping List</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -41,10 +40,10 @@ background-color: #88d6f2;
 }
 
 #stat{
- display: flex;
- justify-content: center;
+
  position: relative;
  top: 50px;
+ left:500px;
  font-size: 26px;
 }
 </style>

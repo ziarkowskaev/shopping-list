@@ -1,4 +1,4 @@
-import { renderFile } from "https://deno.land/x/eta@v2.0.0/mod.ts";
+import { renderFile } from "../deps.js";
 import * as listService from "../services/listService.js";
 import * as itemService from "../services/itemService.js";
 import * as requestUtils from "../utils/requestUtils.js";
@@ -20,7 +20,7 @@ const addList = async (request) => {
 
   await listService.create(name);
 
-  return requestUtils.redirectTo("/list");
+  return requestUtils.redirectTo("/lists");
 };
 
 const deactiveList = async (request) => {
@@ -29,7 +29,7 @@ const deactiveList = async (request) => {
   const urlParts = url.pathname.split("/");
   await listService.deactivate(urlParts[2]);
 
-  return requestUtils.redirectTo("/list");
+  return requestUtils.redirectTo("/lists");
 };
 
 

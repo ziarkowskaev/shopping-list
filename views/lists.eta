@@ -5,10 +5,10 @@
 <h3 class="one"><b>Add a shopping list:</b></h3>
 
  
-  <form class="one" method="POST" action="/list">
+  <form class="one" method="POST" action="/lists">
     Name:
     <br> <input type="text" name="name" /> </br>
-    <br> <input type="submit" value="Create a shopping list!" /> </br>
+    <br> <input data-testid='create' type="submit" value="Create a shopping list!" /> </br>
   </form>
  
 
@@ -17,8 +17,8 @@
 <% it.lists.forEach((list) => { %>
 
   <li style="list-style: none;">
-  <a class ="two" href="/list/<%= list.id %>"><%= list.name %></a>
-  <form method="POST" action="/list/<%= list.id %>/deactivate">
+  <a class ="two"  href="/lists/<%= list.id %>"><%= list.name %></a>
+  <form method="POST" action="/lists/<%= list.id %>/deactivate">
   <input class ="two" type="submit" value="Deactivate list!" />
 </form>
   </li>

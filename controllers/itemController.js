@@ -13,7 +13,7 @@ import * as requestUtils from "../utils/requestUtils.js";
   
     await itemService.createItem(urlParts[2],name);
   
-    return requestUtils.redirectTo(`/list/${urlParts[2]}`);
+    return requestUtils.redirectTo(`/lists/${urlParts[2]}`);
   };
 
   
@@ -24,7 +24,7 @@ import * as requestUtils from "../utils/requestUtils.js";
     const urlParts = url.pathname.split("/");
     await itemService.collect(urlParts[4]);
   
-    return requestUtils.redirectTo(`/list/${urlParts[2]}`);
+    return requestUtils.redirectTo(`/lists/${urlParts[2]}`);
   };
   
 
