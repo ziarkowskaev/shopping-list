@@ -6,4 +6,4 @@ Application includes database, created with PostgreSQL.
 
 Application is deployed on a server and can be accesed with link provided below.
 
-link
+https://shopping-list-w55v.onrender.com/
